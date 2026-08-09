@@ -174,17 +174,6 @@ Background   #393e46
 Primary      #4ecca3
 Text         #eeeeee
 Secondary    #858b92
-```
-
-### Typography
-
-The interface uses:
-
-- **Lobster** — major game headings
-- **Indie Flower** — supporting text and labels
-
-The existing typography has intentionally been kept consistent throughout the project.
-
 ---
 
 ## 🧩 Component Architecture
@@ -530,7 +519,7 @@ Make sure you have installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone (https://github.com/iambadal/roll-again)
+git clone https://github.com/iambadal/roll-again.git
 ```
 
 ---
