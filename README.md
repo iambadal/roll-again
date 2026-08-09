@@ -401,26 +401,6 @@ Player 1 Score → 0
 Player 2 Score → 0
 Round          → 0
 Round History  → Empty
-```
-
-This allows the player to start a fresh game at any time.
-
----
-
-## 📱 Responsive Design
-
-The UI is designed to work across different screen sizes.
-
-Responsive adjustments include:
-
-- Smaller dice cards
-- Smaller headings
-- Compact scoreboard
-- Reduced spacing
-- Mobile-friendly round history
-- Responsive buttons
-- Flexible game layout
-
 ---
 
 ## 📁 Project Structure
@@ -486,33 +466,7 @@ roll-again/
 - 🎨 CSS3
 - 🌐 HTML5
 
-### React Concepts
-
-This project uses:
-
-- `useState`
-- `useEffect`
-- `useRef`
-- Props
-- Callback functions
-- Conditional rendering
-- Event handling
-- Keyboard events
-- Timer management
-- Cleanup functions
-
-### Browser Features
-
-- HTML5 Audio API
-- Random number generation
-- Keyboard events
-- Static asset loading
-
 ---
-
-## 🎧 Static Assets
-
-All static assets are stored inside the `public` directory.
 
 ### Dice Images
 
@@ -576,7 +530,7 @@ Make sure you have installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone (https://github.com/iambadal/roll-again)
 ```
 
 ---
