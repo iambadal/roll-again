@@ -1,0 +1,344 @@
+.game {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.game__header {
+  margin-top: 30px;
+
+  text-align: center;
+}
+
+.game__title {
+  margin: 0;
+
+  color: #4ecca3;
+
+  font-family: "Lobster", cursive;
+  font-size: 5rem;
+
+  line-height: 1.1;
+
+  text-shadow:
+    4px 4px 0 #232931,
+    0 0 25px rgba(78, 204, 163, 0.08);
+}
+
+.game__subtitle {
+  margin-top: 15px;
+
+  color: #eeeeee;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 1.35rem;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   PLAYERS
+========================= */
+
+.game__players {
+  margin-top: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 55px;
+}
+
+.game__vs {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(35, 41, 49, 0.7);
+
+  color: #eeeeee;
+
+  font-family: "Lobster", cursive;
+  font-size: 1.4rem;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(238, 238, 238, 0.05);
+}
+
+/* =========================
+   ROLL BUTTON
+========================= */
+
+.game__button {
+  position: relative;
+
+  margin-top: 55px;
+
+  min-width: 165px;
+
+  padding: 14px 35px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #4ecca3;
+
+  color: #232931;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 1.35rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 0 #2d8f73,
+    0 12px 25px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.2s ease;
+}
+
+.game__button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 1px;
+
+  border-radius: 11px;
+
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+.game__button:hover {
+  transform: translateY(-4px);
+
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 10px 0 #2d8f73,
+    0 18px 30px rgba(0, 0, 0, 0.2);
+}
+
+.game__button:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    0 3px 0 #2d8f73,
+    0 7px 15px rgba(0, 0, 0, 0.15);
+}
+
+.game__button--disabled {
+  cursor: not-allowed;
+
+  opacity: 0.65;
+
+  transform: none;
+
+  filter: none;
+
+  box-shadow:
+    0 3px 0 #2d8f73,
+    0 7px 15px rgba(0, 0, 0, 0.15);
+}
+
+.game__button:disabled {
+  cursor: not-allowed;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .game__title {
+    font-size: 3.8rem;
+  }
+
+  .game__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .game__players {
+    gap: 20px;
+  }
+
+  .game__vs {
+    width: 42px;
+    height: 42px;
+
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .game__header {
+    margin-top: 25px;
+  }
+
+  .game__title {
+    font-size: 2.7rem;
+  }
+
+  .game__subtitle {
+    font-size: 1.05rem;
+  }
+
+  .game__players {
+    margin-top: 40px;
+
+    gap: 8px;
+  }
+
+  .game__vs {
+    width: 35px;
+    height: 35px;
+
+    font-size: 1rem;
+  }
+
+  .game__button {
+    margin-top: 40px;
+
+    min-width: 145px;
+
+    padding: 12px 25px;
+  }
+}
+
+.game__result {
+  transition: transform 0.3s ease;
+}
+
+.game__result--player1 {
+  animation: winner-result 0.5s ease;
+}
+
+.game__result--player2 {
+  animation: winner-result 0.5s ease;
+}
+
+.game__result--draw {
+  animation: draw-result 0.5s ease;
+}
+
+.game__winner {
+  position: relative;
+
+  animation: winner-card 0.6s ease;
+}
+
+.game__winner::after {
+  content: "🏆";
+
+  position: absolute;
+
+  top: -15px;
+  right: -15px;
+
+  font-size: 1.8rem;
+
+  animation: trophy-pop 0.5s ease;
+}
+
+.game__keyboard {
+  margin-top: 18px;
+
+  color: #858b92;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 0.95rem;
+}
+
+.game__keyboard kbd {
+  padding: 2px 7px;
+
+  border: 1px solid rgba(238, 238, 238, 0.15);
+  border-radius: 5px;
+
+  background: rgba(35, 41, 49, 0.7);
+
+  color: #b8bec4;
+
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+@keyframes winner-result {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes draw-result {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes winner-card {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04) translateY(-5px);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes trophy-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-20deg);
+  }
+
+  70% {
+    transform: scale(1.2) rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}

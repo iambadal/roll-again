@@ -1,0 +1,91 @@
+.scoreboard {
+  width: min(700px, 100%);
+
+  margin: 25px auto 0;
+  padding: 16px 30px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  border: 1px solid rgba(78, 204, 163, 0.35);
+  border-radius: 14px;
+
+  background: rgba(35, 41, 49, 0.8);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.18),
+    inset 0 0 20px rgba(78, 204, 163, 0.03);
+}
+
+.scoreboard__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreboard__label {
+  color: #4ecca3;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 1.25rem;
+}
+
+.scoreboard__score {
+  margin-top: 2px;
+
+  color: #eeeeee;
+
+  font-family: "Lobster", cursive;
+  font-size: 2rem;
+}
+
+.scoreboard__divider {
+  min-width: 100px;
+
+  padding: 0 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-left: 1px solid rgba(238, 238, 238, 0.15);
+  border-right: 1px solid rgba(238, 238, 238, 0.15);
+
+  color: #eeeeee;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 1rem;
+}
+
+.scoreboard__divider strong {
+  margin-top: 2px;
+
+  color: #4ecca3;
+
+  font-family: "Lobster", cursive;
+  font-size: 1.7rem;
+}
+
+@media (max-width: 600px) {
+  .scoreboard {
+    padding: 14px 12px;
+  }
+
+  .scoreboard__label {
+    font-size: 1rem;
+  }
+
+  .scoreboard__score {
+    font-size: 1.6rem;
+  }
+
+  .scoreboard__divider {
+    min-width: 80px;
+    padding: 0 12px;
+  }
+
+  .scoreboard__divider strong {
+    font-size: 1.4rem;
+  }
+}

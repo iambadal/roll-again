@@ -1,0 +1,175 @@
+.dice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.dice__player {
+  margin-bottom: 14px;
+
+  color: #4ecca3;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 2rem;
+
+  transition: transform 0.25s ease;
+}
+
+.dice:hover .dice__player {
+  transform: translateY(-3px);
+}
+
+.dice__card {
+  position: relative;
+
+  width: 200px;
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(78, 204, 163, 0.12);
+  border-radius: 22px;
+
+  background: rgba(35, 41, 49, 0.55);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.dice__card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 10px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(78, 204, 163, 0.04);
+
+  pointer-events: none;
+}
+
+.dice:hover .dice__card {
+  transform: translateY(-5px);
+
+  border-color: rgba(78, 204, 163, 0.3);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.28),
+    0 0 25px rgba(78, 204, 163, 0.06);
+}
+
+.dice__image {
+  position: relative;
+  z-index: 1;
+
+  width: 175px;
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+  filter: drop-shadow(
+    0 8px 10px rgba(0, 0, 0, 0.25)
+  );
+}
+
+/* =========================
+   ROLL ANIMATION
+========================= */
+
+.dice--rolling .dice__image {
+  animation: dice-roll 0.8s ease-in-out;
+}
+
+.dice--rolling .dice__card {
+  animation: card-pulse 0.8s ease-in-out;
+}
+
+@keyframes dice-roll {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  20% {
+    transform: rotate(90deg) scale(1.08);
+  }
+
+  40% {
+    transform: rotate(180deg) scale(0.92);
+  }
+
+  60% {
+    transform: rotate(270deg) scale(1.08);
+  }
+
+  80% {
+    transform: rotate(360deg) scale(0.95);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes card-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .dice__player {
+    font-size: 1.6rem;
+  }
+
+  .dice__card {
+    width: 155px;
+    height: 155px;
+
+    border-radius: 18px;
+  }
+
+  .dice__image {
+    width: 135px;
+  }
+}
+
+@media (max-width: 500px) {
+  .dice__player {
+    font-size: 1.35rem;
+  }
+
+  .dice__card {
+    width: 125px;
+    height: 125px;
+
+    border-radius: 15px;
+  }
+
+  .dice__image {
+    width: 110px;
+  }
+}
